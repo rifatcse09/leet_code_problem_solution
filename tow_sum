@@ -1,0 +1,26 @@
+ class Solution {
+
+        /**
+        * @param Integer[] $nums
+        * @param Integer $target
+        * @return Integer[]
+        */
+        function twoSum($nums, $target) {
+            $total = count($nums);
+            //echo $total;
+            for ($i=0; $i<$total; $i++) {
+                $next = $target - $nums[$i];
+                //echo $next.' ';
+                for ($j=$i+1; $j<$total; $j++) {
+                   // echo $nums[$j];
+                    if ($nums[$j] == $next) {
+                        return [$i, $j];
+                        break;
+                    }
+                }
+            }
+        }
+    }
+$nums = [2,7,11,15]; $target = 9;
+$cl = new Solution();
+print_r($cl->twoSum($nums, $target));
